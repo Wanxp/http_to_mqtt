@@ -86,9 +86,15 @@ Node app is running on port 5000
 ```
 
 Publish a message to the topic 'MyTopic'
+1. in request body
 ```bash
 curl -H "Content-Type: application/json" "http://localhost:5000/post"  -d '{"topic" : "MyTopic", "message" : "Hello World" }'
 ```
+2. only in request query parameters
+```bash
+curl "http://localhost:5000/publish_by_uri?topic=MyTopic&message=HelloWorld" 
+```
+
 
 output:
 ```
